@@ -1,0 +1,53 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# blair
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+This is my personal package to organize functions I often find myself going back and copy pasting so that 1) I amd using the same versions across projects and 2) reproducibility. 
+
+## Installation
+
+You can install the development version of blair from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("sophiebmoore00/blair")
+```
+
+## Example
+
+For example, I save color palettes I like to `palettes()`, and the available palette names can be found with `get_palettes()`
+
+```{r example}
+library(blair)
+
+get_palettes()
+
+palettes("blues")
+palettes("one")
+```
+
+And the palettes can be used to easily color plots: 
+
+```{r}
+library(ggplot2)
+ggplot(mtcars, aes(x = wt, y = mpg, color = as.factor(gear))) +
+  geom_point() +
+  scale_color_manual(values = palettes("one"))
+```
+
