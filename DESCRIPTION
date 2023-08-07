@@ -1,5 +1,5 @@
 Package: blair
-Title: Organizes Personal Functions
+Title: A package to manage personal functions
 Version: 0.0.0.9000
 Authors@R: 
     person("Blair", "Moore", , "sophia.moore@chicagobooth.edu", role = c("aut", "cre"),
